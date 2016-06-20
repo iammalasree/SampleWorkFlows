@@ -1,19 +1,8 @@
 'use strict';
-/**
- * Created by jahagira on 10/13/15.
- */
+
 module.exports = SSNDashFilter;
 
 function SSNDashFilter() {
-  /**
-   * SSN Filter
-   * @param ssn: string
-   * @param emptyValue: string
-   * @param unmask: string
-   * @return formatted ssn masked, or unmasked
-   * Example: <div>{{ssnValue | ssnDashFilter:'Not provided':true }}</div>
-   */
-
   return function(ssn, emptyValue, unmask) {
     if (!emptyValue) {
       emptyValue = 'N/A';

@@ -1,6 +1,4 @@
-/**
- * Created by jahagira on 10/7/15.
- */
+
 describe('SSN mask filter', function () {
   'use strict';
 
