@@ -1,0 +1,58 @@
+
+<div ng-show="BtnCtrl.disabled"
+	class="btn-confirm btn-confirm--disabled" title="{{::BtnCtrl.config.disabledText}}">
+		<span class="button pull-left btn-confirm__disabled--text">
+			<span>{{::BtnCtrl.config.startText}}</span>
+		</span>
+</div>
+
+<div ng-show="!BtnCtrl.disabled"
+	class="btn-confirm"
+	ng-class="{'btn-confirm--secondary':BtnCtrl.config.type=='secondary'}">
+
+	<span class="button btn-confirm__approve pull-left"
+		ng-class="{
+			'confirm'            :  BtnCtrl.state==='confirm',
+			'confirm-processing' :  BtnCtrl.state==='processing',
+			'confirm-approved'   :  BtnCtrl.state==='success',
+			'confirm-denied'     :  BtnCtrl.state==='fail'
+		}">
+
+		<span class="carousel-confirm">
+			<span
+				class="start-confirm"
+				target="_blank"
+				analytics-if="{{::BtnCtrl.config.ga_confirm_start_enabled === false ? false : true}}"
+				analytics-on="click"
+				analytics-event="approve-click"
+				analytics-category="smart-compliance"
+				analytics-label="{{::BtnCtrl.config.startText}}-button">{{::BtnCtrl.config.startText}}</span>
+			
+			<span
+				class="action-confirm"
+				target="_blank"
+				analytics-if="{{::BtnCtrl.config.ga_confirm_enabled === false ? false : true}}"
+				analytics-on="{{::BtnCtrl.config.ga_confirm_event || 'click'}}"
+				analytics-event="{{::BtnCtrl.config.ga_confirm_action || 'confirmApprove-click'}}"
+				analytics-category="{{::BtnCtrl.config.ga_confirm_category || 'smart-compliance'}}"
+				analytics-label="{{::BtnCtrl.config.ga_confirm_label || BtnCtrl.config.confirmText+'-button'}}">{{::BtnCtrl.config.confirmText}}</span>
+
+			<span class="process-confirm">
+				<i class="fa fa-spinner fa-pulse"></i><span>{{::BtnCtrl.config.processingText}}</span></span>
+
+			<span class="approved-confirm">
+				<i class="fa fa-check-circle"></i><span>{{::BtnCtrl.config.doneText}}</span></span>
+
+			<span class="denied-confirm">
+				<i class="fa fa-check-circle"></i><span>{{::BtnCtrl.config.errorText}}</span></span>
+		</span>
+	</span>
+
+	<div class="cancel-btn">
+		<span
+			class="button animated secondary">
+				<i class="fa fa-ban"></i>Cancel
+		</span>
+	</div>
+
+</div>

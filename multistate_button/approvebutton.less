@@ -1,0 +1,107 @@
+@import (reference) '../../app/style/_colors';
+
+/*CSS For Approval Animated Button Starts*/
+
+.btn-confirm .button {
+    margin: 5px 10px;
+}
+
+.btn-confirm--disabled .button {
+    background: @neutral;
+    cursor: not-allowed;
+    border: 2px solid @neutral;
+}
+
+.btn-confirm__approve,
+.btn-confirm__approve.confirm {
+    border: 2px solid @primary-color;
+    background: @primary-color;
+    overflow: hidden;
+    transition: width 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn-confirm__approve:hover,
+.btn-confirm__approve.confirm:hover,
+.btn-confirm--secondary .btn-confirm__approve.confirm:hover{
+    border: 2px solid @primary-light;
+    background: @primary-light;
+    transition: background .09s linear;
+}
+
+.btn-confirm--secondary .btn-confirm__approve,
+.btn-confirm .secondary {
+    color: @primary-color;
+    background: none repeat scroll 0 0 @white;
+    border: 2px solid @primary-color;
+}
+
+.btn-confirm--secondary .btn-confirm__approve.confirm {
+    color: @white;
+    background: @primary-color;
+}
+
+.btn-confirm--secondary .btn-confirm__approve:hover,
+.btn-confirm .secondary:hover {
+    transition: .09s linear;
+    color: @white;
+    background: @primary-light;
+    border: 2px solid @primary-light;
+}
+
+// CSS for Button when action is in processing state
+
+.btn-confirm__approve.confirm-processing {
+    background: @neutral;
+    cursor: not-allowed;
+}
+
+.btn-confirm__approve.confirm-processing:hover {
+    background: @neutral;
+}
+
+// CSS for Button when action is approved
+
+.btn-confirm__approve.confirm-approved {
+    background: @accent-1;
+    cursor: not-allowed;
+}
+
+.btn-confirm__approve.confirm-approved:hover {
+    background: @accent-1;
+}
+
+// CSS for Button when action is denied
+
+.btn-confirm__approve.confirm-denied {
+    background: @notification-error;
+    cursor: not-allowed;
+}
+
+// CSS for Button during carousel action (i.e changing from normal state to confirm state)
+
+.btn-confirm__approve .carousel-confirm {
+    display: inline-block;
+    margin-left: 0px;
+    transition: margin 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn-confirm__approve .carousel-confirm span {
+    display: inline-block;
+    text-align: center;
+    margin-right: 12px;
+}
+
+
+.btn-confirm i {
+    line-height: 60%;
+    margin-right: 4px;
+}
+
+// CSS for Cancel Button
+
+.cancel-btn {
+    width: 0;
+    float: left;
+    margin-top: 0;
+    overflow: hidden;
+}
